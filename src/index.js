@@ -1,17 +1,12 @@
 import './css/styles.css';
+import COUNTRY from './js/class-country';
 
-const DEBOUNCE_DELAY = 300;
+const DEBOUNCE_DELAY = 500;
 
-const refs = {
-  input: document.querySelector('#search-box'),
-  countryList: document.querySelector('.country-list'),
-  countryInfo: document.querySelector('.country-info'),
-};
+// ================= class method =====================
 
-refs.input.addEventListener('input', onInputChange);
+new COUNTRY(DEBOUNCE_DELAY);
 
-function onInputChange(event) {
-  console.log(event.currentTarget.value);
+// ============== or function method ==================
 
-  fetch('https://restcountries.com/v3.1/name/peru').then(response => console.log(response));
-}
+// Comment script in index.html and uncomment another.
